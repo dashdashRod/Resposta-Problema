@@ -1,61 +1,27 @@
-# Projeto
+# ProjetoKct
 
-## ChartJS
-No projeto foi utilizado ChartJS para o desenvolvimento dos graficos, para instalar as depedências seguem:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
 
-npms instalados
+## Development server
 
-npm install primeng --save
-npm install chart.js --save
-npm install primeicons --save
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-##Back-End em Django
+## Code scaffolding
 
-O back-end se encontra nesse mesmo diretório e a comunicação entre o front-end e o back-end é feito através das portas de rede
-O front-end utiliza http://127.0.0.1:4200 enquanto o back-end faz uso de http://127.0.0.1:8000/home/.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Os dados mocados se encontram em View.py, localizado no Back-end
+## Build
 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.5.
+## Running unit tests
 
-## Servidor de desenvolvimento
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Execute `ng serve` para um servidor de desenvolvimento. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar algum dos arquivos de origem.
+## Running end-to-end tests
 
-## Andaime de código
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Execute `ng generate component nome-do-componente` para gerar um novo componente. Você também pode usar `ng generate directiva|pipe|service|class|guard|interface|enum|module`.
+## Further help
 
-## Construir
-
-Execute `ng build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`.
-
-## Executando testes unitários
-
-Execute `ng test` para executar os testes de unidade via [Karma](https://karma-runner.github.io).
-
-## Executando testes ponta a ponta
-
-Execute `ng e2e` para executar os testes ponta a ponta através de uma plataforma de sua escolha. Para usar este comando, você precisa primeiro adicionar um pacote que implemente recursos de teste ponta a ponta.
-
-## Mais ajuda
-
-Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão geral do Angular CLI e referência de comandos](https://angular.io/cli).
-
-
-## Imagem do Gráfico solução do projeto
-
-![new-imagem](https://github.com/dashdashRod/solucao/assets/39976286/ed7f8a86-68a6-4724-bfea-0ed7db57b184)
-
-## Imagem do graifico após consumo da api
-
-![outra-imagem](https://github.com/dashdashRod/solucao/assets/39976286/c55297bd-4ba4-4f1f-a1ce-866345e71404)
-
-
-## Imagem do JSON gerado pelo back-end como base de dados mocada
-
-![imagem-mocada](https://github.com/dashdashRod/solucao/assets/39976286/dbe24fae-742e-4004-acb4-013aac6bb49e)
-
-
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
