@@ -44,11 +44,16 @@ Execute `ng e2e` para executar os testes ponta a ponta através de uma plataform
 Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão geral do Angular CLI e referência de comandos](https://angular.io/cli).
 
 
-##Imagem do Gráfico solução do projeto
+## Imagem do Gráfico solução do projeto
 
 ![new-imagem](https://github.com/dashdashRod/solucao/assets/39976286/ed7f8a86-68a6-4724-bfea-0ed7db57b184)
 
-##Imagem do JSON gerado pelo back-end como base de dados mocada
+## Imagem do graifico após consumo da api
+
+![outra-imagem](https://github.com/dashdashRod/solucao/assets/39976286/c55297bd-4ba4-4f1f-a1ce-866345e71404)
+
+
+## Imagem do JSON gerado pelo back-end como base de dados mocada
 
 ![imagem-mocada](https://github.com/dashdashRod/solucao/assets/39976286/dbe24fae-742e-4004-acb4-013aac6bb49e)
 
