@@ -37,8 +37,8 @@
       <h1 style="color:blue"></h1> 
       <h2></h2> 
       <div style="width:70%;"> 
-        <p-chart type="bar"
-            [data]="basicData" 
+        <p-chart #chart type="bar"
+            [data]="updateGraphFunction()" 
             [options]="basicOptions" id="Mychart"> 
         </p-chart>
       </div> 
