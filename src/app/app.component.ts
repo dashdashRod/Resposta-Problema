@@ -1,15 +1,18 @@
-import { Component } from '@angular/core'; 
+import { Component,OnInit,SimpleChange,SimpleChanges,ViewChild } from '@angular/core'; 
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { Chart } from 'chart.js';
 import Config from 'chart.js/dist/core/core.config';
+import { UIChart } from 'primeng/chart';
 
 
 @Component({ 
 	selector: 'app-root', 
 	templateUrl: './app.component.html', 
 	styleUrls: ['./app.component.css'] 
-}) 
-export class AppComponent { 
+})
+
+export class AppComponent {
+  @ViewChild('chart') chart: UIChart | undefined; 
 	title = 'XX'; 
   mychart: any;
   
@@ -38,7 +41,7 @@ export class AppComponent {
   django_object: any;
   final_data_source:any = [];
   outro:any = []
-
+  
   firstEvent(value: any){
     this.first_temp = this.categorias[value.target.value as keyof typeof this.categorias];
     console.log(this.first_temp);
@@ -56,62 +59,82 @@ export class AppComponent {
     Object.entries(this.django_object).forEach(([key, value], index) => {
       if(key == this.last_temp){
         this.final_data_source = value;
-        console.log(this.final_data_source)
-        for (let index = 0; index < this.final_data_source.length; index++) {
-          this.outro.push(this.final_data_source[index]) 
-        }
-        // console.log(this.basicData.datasets[0].data = this.outro)
+
         this.basicData.datasets[0].data = this.final_data_source
         console.log(this.basicData.datasets[0].data)
       }
     });
+  }
+  
+  updateGraphFunction(){
+    if(this.final_data_source !== null){
+      this.basicData.datasets[0].data = this.final_data_source;
+      this.chart?.refresh();
+      setTimeout(() => {
+        this.chart?.refresh();
+      },1)
+      return this.basicData;
+    }
+    return this.basicData;
   }
 
   ngOnInit(): void{
     this.django_object = this.http.get("http://127.0.0.1:8000/home/").subscribe(
       data => this.django_object = data
     )
+    this.basicData = this.updateGraphFunction()
+  }
+  
+  ngOnChanges(changes: SimpleChanges): void{
+    if(changes['inputData'].currentValue){
+      setTimeout(() =>{
+        this.chart?.refresh();
+      }
+      ,1)
+    }
+    this.chart?.initChart()
   }
 
 
-  basicData = { 
-    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril'],
-    
-		datasets: [ 
-			{
-				label: 'Sales by month for:', 
-				backgroundColor: 'blue', 
-				data: [500, 320, 410, 520, 600, 600, 600] 
-      }, 
-		],
-    
-  };
 
-	basicOptions = { 
-		plugins: { 
-			legend: { 
-				labels: { 
-					color: '#black'
-				} 
-			} 
-		}, 
-		scales: { 
-			x: { 
-				ticks: { 
-					color: '#black'
-				}, 
-				grid: { 
-					color: 'rgba(0,0,0,0.4)'
-				} 
-			}, 
-			y: { 
-				ticks: { 
-					color: '#black'
-				}, 
-				grid: { 
-					color: 'rgba(0,0,0,0.4)'
-				} 
-			} 
-		},
-	}; 
+basicData = { 
+  labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril'],
+  
+  datasets: [ 
+    {
+      label: 'Sales by month for:', 
+      backgroundColor: 'blue', 
+      data: [500, 320, 410, 520, 600, 600, 600] 
+    }, 
+  ],
+  
+};
+
+basicOptions = { 
+  plugins: { 
+    legend: { 
+      labels: { 
+        color: '#black'
+      } 
+    } 
+  }, 
+  scales: { 
+    x: { 
+      ticks: { 
+        color: '#black'
+      }, 
+      grid: { 
+        color: 'rgba(0,0,0,0.4)'
+      } 
+    }, 
+    y: { 
+      ticks: { 
+        color: '#black'
+      }, 
+      grid: { 
+        color: 'rgba(0,0,0,0.4)'
+      } 
+    } 
+  },
+};
 }
