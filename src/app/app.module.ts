@@ -5,17 +5,17 @@ import { AppComponent } from './app.component';
 import { ChartModule } from 'primeng/chart'; 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewChild } from '@angular/core';
 
 @NgModule({ 
 	declarations: [ 
-		AppComponent, 
-
+		AppComponent,
 	], 
-	imports: [ 
+	imports: [
 		BrowserModule, 
 		ChartModule,
-    FormsModule,
-    HttpClientModule,
+    	FormsModule,
+    	HttpClientModule,
 	], 
 	providers: [], 
 	bootstrap: [AppComponent] 
